@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class HouseFilter : MonoBehaviour
 {
+    [Header("Buttons")]
     [SerializeField] private Button bedroom1Button;
     [SerializeField] private Button bedroom2Button;
     [SerializeField] private Button bedroom3Button;
@@ -11,6 +12,7 @@ public class HouseFilter : MonoBehaviour
     [SerializeField] private Button bathroom2Button;
     [SerializeField] private Button bathroom3Button;
 
+    [Header("Button Colors")]
     [SerializeField] private Color activeColor = Color.green;
     [SerializeField] private Color inactiveColor = Color.white;
 
@@ -44,11 +46,13 @@ public class HouseFilter : MonoBehaviour
 
     private void ToggleBedrooms(int bedrooms, Button button)
     {
+        // If the button is already selected, deselect it
         if (selectedBedrooms == bedrooms)
         {
             selectedBedrooms = -1;
             SetButtonColor(button, false);
         }
+        // If the button is not selected, select it
         else
         {
             DeselectAllBedroomButtons();
@@ -60,11 +64,13 @@ public class HouseFilter : MonoBehaviour
 
     private void ToggleBathrooms(int bathrooms, Button button)
     {
+        // If the button is already selected, deselect it
         if (selectedBathrooms == bathrooms)
         {
             selectedBathrooms = -1;
             SetButtonColor(button, false);
         }
+        // If the button is not selected, select it
         else
         {
             DeselectAllBathroomButtons();

@@ -5,14 +5,19 @@ using UnityEngine.UI;
 public class HouseListManager : MonoBehaviour
 {
     public static HouseListManager Instance;
+
+    [Header("House Settings")]
     public List<House> housePrefabs;
     public Transform houseDisplaySpot;
     public float zoomAnimationDuration = 0.3f;
     public float zoomScale = 2.0f;
 
-    [SerializeField] private GameObject filterPanel;
+    [Header("UI Elements")]
+    [SerializeField] private GameObject mainUI;
     [SerializeField] private Button leftButton;
     [SerializeField] private Button rightButton;
+
+    [Header("House Display Settings")]
     [SerializeField] private float gap = 2.5f;
 
     private List<GameObject> activeHouses = new List<GameObject>();
@@ -154,13 +159,13 @@ public class HouseListManager : MonoBehaviour
         return house.transform.position;
     }
 
-    public void HideFilterPanel()
+    public void HideMainUI()
     {
-        filterPanel.SetActive(false);
+        mainUI.SetActive(false);
     }
 
-    public void ShowFilterPanel()
+    public void ShowMainUI()
     {
-        filterPanel.SetActive(true);
+        mainUI.SetActive(true);
     }
 }

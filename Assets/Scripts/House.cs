@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
+    [Header("House Info")]
     public int bedrooms;
     public int bathrooms;
+    [SerializeField] private float price;
+    [SerializeField] private string address;
+    [SerializeField] private string size;
+
+    [Header("House Model")]
+    [SerializeField] private GameObject houseModel;
+
+    [Header("UI Elements")]
+    [SerializeField] private GameObject houseInfoPanel;
+    [SerializeField] private TMPro.TextMeshProUGUI priceText;
+    [SerializeField] private TMPro.TextMeshProUGUI addressText;
+    [SerializeField] private TMPro.TextMeshProUGUI sizeText;
 
     private Vector3 originalScale;
     private Vector3 originalPosition;
@@ -17,17 +30,36 @@ public class House : MonoBehaviour
     {
         originalScale = transform.localScale;
         originalPosition = transform.position;
+
+        priceText.text = "Rp" + price.ToString("N0");
+        addressText.text = address;
+        sizeText.text = size;
     }
 
     private void Update()
     {
-        // Rotate the house smoothly
-        transform.Rotate(Vector3.up, Time.deltaTime * 10);
+        // Rotate the house model slowly
+        houseModel.transform.Rotate(Vector3.up * Time.deltaTime * 10);
+
+        // Handle mouse click on the house model
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject == houseModel)
+                {
+                    OnModelClick();
+                }
+            }
+        }
     }
 
     // Handle house click
-    private void OnMouseDown()
+    private void OnModelClick()
     {
+        Debug.Log("Clicked on " + gameObject.name);
         if (currentCoroutine != null)
         {
             StopCoroutine(currentCoroutine);
@@ -55,7 +87,7 @@ public class House : MonoBehaviour
 
             // Hide all houses except this one
             HouseListManager.Instance.HideAllHousesExcept(this.gameObject);
-            HouseListManager.Instance.HideFilterPanel();
+            HouseListManager.Instance.HideMainUI();
         }
         isZoomed = !isZoomed;
     }
@@ -82,6 +114,6 @@ public class House : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         HouseListManager.Instance.ShowAllHouses();
-        HouseListManager.Instance.ShowFilterPanel();
+        HouseListManager.Instance.ShowMainUI();
     }
 }
