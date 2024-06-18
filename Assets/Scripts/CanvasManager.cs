@@ -15,10 +15,10 @@ public class CanvasManager : MonoBehaviour
     // Durasi waktu dalam detik untuk memanjang
     public float duration = 1.0f;
 
-    // Skala akhir pada sumbu Z
-    public float targetScaleZ = 0.1f;
+    // Skala akhir pada sumbu X
+    public float targetScaleX = 0.1f;
 
-    // Awal skala pada sumbu Z
+    // Awal skala pada sumbu X
     private Vector3 initialScale;
 
     // Start is called before the first frame update
@@ -52,21 +52,21 @@ public class CanvasManager : MonoBehaviour
 
         planeTransform = plane.transform;
         // Simpan skala awal
-        initialScale = new Vector3(planeTransform.localScale.x, planeTransform.localScale.y, (float) 0.01);
+        initialScale = new Vector3(0.01f, planeTransform.localScale.y, planeTransform.localScale.z);
         
         float elapsedTime = 0;
-        Vector3 targetScale = new Vector3(initialScale.x, initialScale.y, targetScaleZ);
+        Vector3 targetScale = new Vector3(targetScaleX, initialScale.y, initialScale.z);
 
         while (elapsedTime < time)
         {
             // Interpolasi skala dari awal ke target
-            planeTransform.localScale = Vector3.Lerp(initialScale, targetScale, (elapsedTime / time));
+            planeTransform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / time);
             elapsedTime += Time.deltaTime;
 
             // Tunggu frame berikutnya
             yield return null;
         }
-
+        
         // Pastikan skala akhir tepat pada target
         planeTransform.localScale = targetScale;
     }

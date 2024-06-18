@@ -8,9 +8,13 @@ public class HouseFilter : MonoBehaviour
     [SerializeField] private Button bedroom1Button;
     [SerializeField] private Button bedroom2Button;
     [SerializeField] private Button bedroom3Button;
+    [SerializeField] private Button bedroom4Button;
+    [SerializeField] private Button bedroom5Button;
     [SerializeField] private Button bathroom1Button;
     [SerializeField] private Button bathroom2Button;
     [SerializeField] private Button bathroom3Button;
+    [SerializeField] private Button bathroom4Button;
+    [SerializeField] private Button bathroom5Button;
     [SerializeField] private Button priceRange1Button;
     [SerializeField] private Button priceRange2Button;
     [SerializeField] private Button priceRange3Button;
@@ -31,11 +35,15 @@ public class HouseFilter : MonoBehaviour
         bedroom1Button.onClick.AddListener(delegate { ToggleBedrooms(1, bedroom1Button); });
         bedroom2Button.onClick.AddListener(delegate { ToggleBedrooms(2, bedroom2Button); });
         bedroom3Button.onClick.AddListener(delegate { ToggleBedrooms(3, bedroom3Button); });
+        bedroom4Button.onClick.AddListener(delegate { ToggleBedrooms(4, bedroom4Button); });
+        bedroom5Button.onClick.AddListener(delegate { ToggleBedrooms(5, bedroom5Button); });
 
         // Add listeners to bathroom buttons
         bathroom1Button.onClick.AddListener(delegate { ToggleBathrooms(1, bathroom1Button); });
         bathroom2Button.onClick.AddListener(delegate { ToggleBathrooms(2, bathroom2Button); });
         bathroom3Button.onClick.AddListener(delegate { ToggleBathrooms(3, bathroom3Button); });
+        bathroom4Button.onClick.AddListener(delegate { ToggleBathrooms(4, bathroom4Button); });
+        bathroom5Button.onClick.AddListener(delegate { ToggleBathrooms(5, bathroom5Button); });
 
         // Add listeners to price buttons
         priceRange1Button.onClick.AddListener(delegate { TogglePriceRange(1, priceRange1Button); });
@@ -50,9 +58,13 @@ public class HouseFilter : MonoBehaviour
         SetButtonColor(bedroom1Button, false);
         SetButtonColor(bedroom2Button, false);
         SetButtonColor(bedroom3Button, false);
+        SetButtonColor(bedroom4Button, false);
+        SetButtonColor(bedroom5Button, false);
         SetButtonColor(bathroom1Button, false);
         SetButtonColor(bathroom2Button, false);
         SetButtonColor(bathroom3Button, false);
+        SetButtonColor(bathroom4Button, false);
+        SetButtonColor(bathroom5Button, false);
         SetButtonColor(priceRange1Button, false);
         SetButtonColor(priceRange2Button, false);
         SetButtonColor(priceRange3Button, false);
@@ -129,6 +141,8 @@ public class HouseFilter : MonoBehaviour
         SetButtonColor(bedroom1Button, false);
         SetButtonColor(bedroom2Button, false);
         SetButtonColor(bedroom3Button, false);
+        SetButtonColor(bedroom4Button, false);
+        SetButtonColor(bedroom5Button, false);
     }
 
     private void DeselectAllBathroomButtons()
@@ -136,6 +150,8 @@ public class HouseFilter : MonoBehaviour
         SetButtonColor(bathroom1Button, false);
         SetButtonColor(bathroom2Button, false);
         SetButtonColor(bathroom3Button, false);
+        SetButtonColor(bathroom4Button, false);
+        SetButtonColor(bathroom5Button, false);
     }
 
     private void DeselectAllPriceButtons()

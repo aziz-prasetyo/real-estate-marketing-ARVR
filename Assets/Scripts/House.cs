@@ -8,17 +8,9 @@ public class House : MonoBehaviour
     public int bedrooms;
     public int bathrooms;
     public float price;
-    [SerializeField] private string address;
-    [SerializeField] private string size;
 
     [Header("House Model")]
     [SerializeField] private GameObject houseModel;
-
-    [Header("UI Elements")]
-    [SerializeField] private GameObject houseInfoPanel;
-    [SerializeField] private TMPro.TextMeshProUGUI priceText;
-    [SerializeField] private TMPro.TextMeshProUGUI addressText;
-    [SerializeField] private TMPro.TextMeshProUGUI sizeText;
 
     private Vector3 originalScale;
     private Vector3 originalPosition;
@@ -30,10 +22,6 @@ public class House : MonoBehaviour
     {
         originalScale = transform.localScale;
         originalPosition = transform.position;
-
-        priceText.text = "Rp" + price.ToString("N0");
-        addressText.text = address;
-        sizeText.text = size;
     }
 
     private void Update()
@@ -80,7 +68,7 @@ public class House : MonoBehaviour
 
             // Zoom in
             currentCoroutine = StartCoroutine(SmoothTransform(
-                HouseListManager.Instance.houseDisplaySpot.position + new Vector3(0, 0.6f, 0),
+                HouseListManager.Instance.houseDisplaySpot.position + new Vector3(0, 0.08f, 0),
                 originalScale * HouseListManager.Instance.zoomScale,
                 HouseListManager.Instance.zoomAnimationDuration
             ));

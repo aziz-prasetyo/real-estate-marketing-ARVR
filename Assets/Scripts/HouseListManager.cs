@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class HouseListManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class HouseListManager : MonoBehaviour
 
     [Header("House Display Settings")]
     [SerializeField] private float gap = 2.5f;
+    [SerializeField] private float initialAppearanceDelay = 0.5f;
 
     private List<GameObject> activeHouses = new List<GameObject>();
     private int currentIndex = 0;
@@ -35,6 +37,8 @@ public class HouseListManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -43,11 +47,10 @@ public class HouseListManager : MonoBehaviour
         leftButton.onClick.AddListener(ShiftLeft);
         rightButton.onClick.AddListener(ShiftRight);
 
-        // Initialize and position the houses
-        InitializeHouses();
+        StartCoroutine(InitializeHousesWithDelayCoroutine());
     }
 
-    private void InitializeHouses()
+    public void InitializeHouses()
     {
         foreach (House housePrefab in housePrefabs)
         {
@@ -57,6 +60,17 @@ public class HouseListManager : MonoBehaviour
         }
 
         UpdateHouseVisibility();
+    }
+
+    public void InitializeHousesWithDelay()
+    {
+        StartCoroutine(InitializeHousesWithDelayCoroutine());
+    }
+
+    private IEnumerator InitializeHousesWithDelayCoroutine()
+    {
+        yield return new WaitForSeconds(initialAppearanceDelay);
+        InitializeHouses();
     }
 
     public List<House> GetAllHouses()

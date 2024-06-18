@@ -50,15 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877168527464312217, guid: 334e2e379f3f0fd41a59f550b4ebda49, type: 3}
       propertyPath: price
-      value: 100000000
+      value: 500000000
       objectReference: {fileID: 0}
     - target: {fileID: 3877168527464312217, guid: 334e2e379f3f0fd41a59f550b4ebda49, type: 3}
       propertyPath: bedrooms
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3877168527464312217, guid: 334e2e379f3f0fd41a59f550b4ebda49, type: 3}
       propertyPath: bathrooms
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5831660259698159547, guid: 334e2e379f3f0fd41a59f550b4ebda49, type: 3}
       propertyPath: m_Name
@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7590253349898752815, guid: 334e2e379f3f0fd41a59f550b4ebda49, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 85729f143c1b11e408fa01510338b244, type: 2}
     - target: {fileID: 8609206595853097999, guid: 334e2e379f3f0fd41a59f550b4ebda49, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
