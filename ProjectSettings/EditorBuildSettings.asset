@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Bedroom.unity
+    guid: 89d016576baff504797b69ea7b4a596e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5ccefdbca2fc0b443b8b7eda6754b7d3, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 55f3bab58da09394b8a7a8d278aa98dc, type: 2}

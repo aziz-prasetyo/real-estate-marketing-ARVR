@@ -2100,7 +2100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4dfd7c26562cfb041ad7b66f9c93f158, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 081665e1a6827c642bd53001ac0cbe3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2564,8 +2564,9 @@ GameObject:
   - component: {fileID: 874166738}
   - component: {fileID: 874166737}
   - component: {fileID: 874166736}
+  - component: {fileID: 874166739}
   m_Layer: 5
-  m_Name: Button Price 1
+  m_Name: Button Bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2672,6 +2673,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874166734}
   m_CullTransparentMesh: 1
+--- !u!114 &874166739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874166734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b6fffd65d97fd4d9f820371420bd11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Bedroom
 --- !u!1 &893617562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,8 +2839,9 @@ GameObject:
   - component: {fileID: 912554774}
   - component: {fileID: 912554773}
   - component: {fileID: 912554772}
+  - component: {fileID: 912554775}
   m_Layer: 5
-  m_Name: Button Price 3
+  m_Name: Button Bedroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2933,6 +2948,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912554770}
   m_CullTransparentMesh: 1
+--- !u!114 &912554775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912554770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b6fffd65d97fd4d9f820371420bd11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Bedroom
 --- !u!1 &970783863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,7 +3612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 10, y: 10, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.8, y: 0.2}
+  m_AnchoredPosition: {x: 0.8, y: 0.1}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1067768551
@@ -5534,8 +5562,9 @@ GameObject:
   - component: {fileID: 2092236964}
   - component: {fileID: 2092236963}
   - component: {fileID: 2092236962}
+  - component: {fileID: 2092236965}
   m_Layer: 5
-  m_Name: Button Price 2
+  m_Name: Button Living Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5642,6 +5671,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092236960}
   m_CullTransparentMesh: 1
+--- !u!114 &2092236965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092236960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b6fffd65d97fd4d9f820371420bd11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Bedroom
 --- !u!1 &2134982339
 GameObject:
   m_ObjectHideFlags: 0
