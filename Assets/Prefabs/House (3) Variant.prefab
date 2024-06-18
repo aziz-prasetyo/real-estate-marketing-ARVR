@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877168527464312217, guid: 334e2e379f3f0fd41a59f550b4ebda49, type: 3}
       propertyPath: price
-      value: 140000000
+      value: 100000000
       objectReference: {fileID: 0}
     - target: {fileID: 3877168527464312217, guid: 334e2e379f3f0fd41a59f550b4ebda49, type: 3}
       propertyPath: bedrooms

@@ -7,7 +7,7 @@ public class House : MonoBehaviour
     [Header("House Info")]
     public int bedrooms;
     public int bathrooms;
-    [SerializeField] private float price;
+    public float price;
     [SerializeField] private string address;
     [SerializeField] private string size;
 

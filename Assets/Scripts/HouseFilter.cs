@@ -11,6 +11,10 @@ public class HouseFilter : MonoBehaviour
     [SerializeField] private Button bathroom1Button;
     [SerializeField] private Button bathroom2Button;
     [SerializeField] private Button bathroom3Button;
+    [SerializeField] private Button priceRange1Button;
+    [SerializeField] private Button priceRange2Button;
+    [SerializeField] private Button priceRange3Button;
+    [SerializeField] private Button priceRange4Button;
 
     [Header("Button Colors")]
     [SerializeField] private Color activeColor = Color.green;
@@ -19,6 +23,7 @@ public class HouseFilter : MonoBehaviour
     private List<House> allHouses = new List<House>();
     private int selectedBedrooms = -1;
     private int selectedBathrooms = -1;
+    private int selectedPriceRange = -1;
 
     private void Start()
     {
@@ -32,6 +37,12 @@ public class HouseFilter : MonoBehaviour
         bathroom2Button.onClick.AddListener(delegate { ToggleBathrooms(2, bathroom2Button); });
         bathroom3Button.onClick.AddListener(delegate { ToggleBathrooms(3, bathroom3Button); });
 
+        // Add listeners to price buttons
+        priceRange1Button.onClick.AddListener(delegate { TogglePriceRange(1, priceRange1Button); });
+        priceRange2Button.onClick.AddListener(delegate { TogglePriceRange(2, priceRange2Button); });
+        priceRange3Button.onClick.AddListener(delegate { TogglePriceRange(3, priceRange3Button); });
+        priceRange4Button.onClick.AddListener(delegate { TogglePriceRange(4, priceRange4Button); });
+
         // Get all houses
         allHouses = HouseListManager.Instance.GetAllHouses();
 
@@ -42,6 +53,10 @@ public class HouseFilter : MonoBehaviour
         SetButtonColor(bathroom1Button, false);
         SetButtonColor(bathroom2Button, false);
         SetButtonColor(bathroom3Button, false);
+        SetButtonColor(priceRange1Button, false);
+        SetButtonColor(priceRange2Button, false);
+        SetButtonColor(priceRange3Button, false);
+        SetButtonColor(priceRange4Button, false);
     }
 
     private void ToggleBedrooms(int bedrooms, Button button)
@@ -80,6 +95,25 @@ public class HouseFilter : MonoBehaviour
         FilterHouses();
     }
 
+    private void TogglePriceRange(int priceRange, Button button)
+    {
+        // If the button is already selected, deselect it
+        if (selectedPriceRange == priceRange)
+        {
+            selectedPriceRange = -1;
+            SetButtonColor(button, false);
+        }
+        // If the button is not selected, select it
+        else
+        {
+            DeselectAllPriceButtons();
+            selectedPriceRange = priceRange;
+            SetButtonColor(button, true);
+        }
+        FilterHouses();
+    }
+
+
     private void SetButtonColor(Button button, bool isActive)
     {
         ColorBlock colorBlock = button.colors;
@@ -104,6 +138,14 @@ public class HouseFilter : MonoBehaviour
         SetButtonColor(bathroom3Button, false);
     }
 
+    private void DeselectAllPriceButtons()
+    {
+        SetButtonColor(priceRange1Button, false);
+        SetButtonColor(priceRange2Button, false);
+        SetButtonColor(priceRange3Button, false);
+        SetButtonColor(priceRange4Button, false);
+    }
+
     private void FilterHouses()
     {
         List<House> filteredHouses = new List<House>();
@@ -112,8 +154,13 @@ public class HouseFilter : MonoBehaviour
         {
             bool bedroomsMatch = selectedBedrooms == -1 || house.bedrooms == selectedBedrooms;
             bool bathroomsMatch = selectedBathrooms == -1 || house.bathrooms == selectedBathrooms;
+            bool priceMatch = selectedPriceRange == -1 ||
+                                (selectedPriceRange == 1 && house.price < 100000000) ||
+                                (selectedPriceRange == 2 && house.price > 100000000 && house.price <= 500000000) ||
+                                (selectedPriceRange == 3 && house.price > 500000000 && house.price <= 1000000000) ||
+                                (selectedPriceRange == 4 && house.price > 1000000000);
 
-            if (bedroomsMatch && bathroomsMatch)
+            if (bedroomsMatch && bathroomsMatch && priceMatch)
             {
                 filteredHouses.Add(house);
             }
