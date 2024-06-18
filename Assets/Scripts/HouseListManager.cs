@@ -15,6 +15,7 @@ public class HouseListManager : MonoBehaviour
 
     [Header("UI Elements")]
     [SerializeField] private GameObject mainUI;
+    [SerializeField] private GameObject DetailUI;
     [SerializeField] private Button leftButton;
     [SerializeField] private Button rightButton;
 
@@ -46,8 +47,6 @@ public class HouseListManager : MonoBehaviour
         // Initialize the buttons
         leftButton.onClick.AddListener(ShiftLeft);
         rightButton.onClick.AddListener(ShiftRight);
-
-        StartCoroutine(InitializeHousesWithDelayCoroutine());
     }
 
     public void InitializeHouses()
@@ -176,10 +175,12 @@ public class HouseListManager : MonoBehaviour
     public void HideMainUI()
     {
         mainUI.SetActive(false);
+        DetailUI.SetActive(true);
     }
 
     public void ShowMainUI()
     {
         mainUI.SetActive(true);
+        DetailUI.SetActive(false);
     }
 }

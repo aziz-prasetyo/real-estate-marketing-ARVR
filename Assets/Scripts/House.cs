@@ -68,7 +68,7 @@ public class House : MonoBehaviour
 
             // Zoom in
             currentCoroutine = StartCoroutine(SmoothTransform(
-                HouseListManager.Instance.houseDisplaySpot.position + new Vector3(0, 0.08f, 0),
+                HouseListManager.Instance.houseDisplaySpot.position + new Vector3(0, 0.15f, 0),
                 originalScale * HouseListManager.Instance.zoomScale,
                 HouseListManager.Instance.zoomAnimationDuration
             ));
