@@ -1,7 +1,7 @@
 # Real Estate Marketing ARVR
 
-Proyek ini adalah aplikasi akhir dari mata kuliah Realitas Virtual dan Realitas Augmentasi yang berjudul "Real Estate Marketing ARVR". Aplikasi ini dibuat menggunakan Unity dan bertujuan untuk menggabungkan teknologi AR (Augmented Reality) dan VR (Virtual Reality) dalam pemasaran properti. Dengan aplikasi ini, pengguna dapat merasakan pengalaman interaktif dan immersif saat menjelajahi properti yang ditawarkan, baik melalui simulasi VR yang realistis maupun melalui fitur AR yang memungkinkan visualisasi properti secara langsung di lingkungan nyata. Proyek ini diharapkan dapat memberikan solusi inovatif dalam industri pemasaran real estate, dengan memanfaatkan kekuatan teknologi AR dan VR untuk meningkatkan pengalaman pelanggan.
-
+<p align="justify">Proyek ini adalah aplikasi akhir dari mata kuliah Realitas Virtual dan Realitas Augmentasi yang berjudul "Real Estate Marketing ARVR". Aplikasi ini dibuat menggunakan Unity dan bertujuan untuk menggabungkan teknologi AR (Augmented Reality) dan VR (Virtual Reality) dalam pemasaran properti. Dengan aplikasi ini, pengguna dapat merasakan pengalaman interaktif dan immersif saat menjelajahi properti yang ditawarkan, baik melalui simulasi VR yang realistis maupun melalui fitur AR yang memungkinkan visualisasi properti secara langsung di lingkungan nyata. Proyek ini diharapkan dapat memberikan solusi inovatif dalam industri pemasaran real estate, dengan memanfaatkan kekuatan teknologi AR dan VR untuk meningkatkan pengalaman pelanggan.
+</p>
 ## Team
 
 1. Arya Bagus Farrazan - 2110511093
