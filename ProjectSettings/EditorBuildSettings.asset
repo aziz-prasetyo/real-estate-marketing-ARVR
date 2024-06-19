@@ -4,5 +4,42 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Bedroom.unity
+    guid: 89d016576baff504797b69ea7b4a596e
+  - enabled: 1
+    path: Assets/Scenes/BathroomScene01.unity
+    guid: 7c97a48aeec02b344bd060ece195521f
+  - enabled: 1
+    path: Assets/Scenes/BathroomScene02.unity
+    guid: 03bbac6bac4d8a049ace0c8dcfba0d28
+  - enabled: 1
+    path: Assets/Scenes/BathroomScene03.unity
+    guid: 85429fbe8b09d0842aab58308813ec57
+  - enabled: 1
+    path: Assets/Scenes/BedroomScene01.unity
+    guid: df05c6a97f3683d4698eb94065dba8ab
+  - enabled: 1
+    path: Assets/Scenes/BedroomScene02.unity
+    guid: a3e5a129eee66404aa2766f15b7cccef
+  - enabled: 1
+    path: Assets/Scenes/BedroomScene03.unity
+    guid: d44fdda5d6b40974084b6946b9206bfb
+  - enabled: 1
+    path: Assets/Scenes/LivingRoomScene01.unity
+    guid: 3d6a8b6eea30bb74993bc7890d7f6bed
+  - enabled: 1
+    path: Assets/Scenes/LivingRoomScene02.unity
+    guid: 7e8cf33c2cd08e94490779099c3f54c4
+  - enabled: 1
+    path: Assets/Scenes/LivingRoomScene03.unity
+    guid: bc070f2d5d9b18d498999396abe39069
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5ccefdbca2fc0b443b8b7eda6754b7d3, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 55f3bab58da09394b8a7a8d278aa98dc, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 93fda540070f69f4c939eb89c61e5e63, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 356ced838f2d4024bb918b1b7eafc8d2, type: 2}
